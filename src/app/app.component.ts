@@ -1,69 +1,44 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OverlayComponent } from './components/overlay/overlay.component';
+import { OverlayDataService } from './services/fundvis-overlay-service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, OverlayComponent],
+  providers: [OverlayDataService],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'fundvis-overlay-demo';
-   showOverlay = false;
-     drawerOpen = false;
-      companyName = 'Amazon.com, Inc.';
-      recordId = '1'
-
-sectionData = {
-    Tasks: {
-      tags: [{ label: 'open', count: 0 }, { label: 'recurring', count: 0 }],
-      items: [] // lazy loaded
-    },
-    Risks: {
-      tags: [{ label: 'critical', count: 1 }],
-      items: [
-        { name: 'Risk A', status: 'Critical' },
-         { name: 'Risk B', status: 'Medium' },
-          { name: 'Risk C', status: 'Low' }
-      ]
-    },
-    Assets: {
-      tags: [],
-      items: []
-    },
-    Incidents: {
-      tags: [{ label: 'critical', count: 1 }],
-      items: [
-        { name: 'Incidents A', status: 'High Priority' },
-        { name: 'Incidents B', status: 'Resolved' }
-      ]
-    },
-     'Business Functions': {
-      tags: [],
-      items: [
-        { name: 'BusinessfnsA', status: 'Open' },
-        { name: 'BusinessfnsB', status: 'Resolved' }
-      ]
-    },
-     Contracts: {
-      tags: [{ label: 'open', count: 1 },{ label: 'Resolved', count: 1 }],
-      items: [
-     { name: 'Contract A', status: 'Open', filename: 'contract-a.pdf' },
-  { name: 'Contract B', status: 'Resolved', filename: 'contract-b.pdf' }
-  ]
-    },
+  showOverlay = false;
+  drawerOpen = false;
+  companyName = 'Amazon.com, Inc.';
+  recordId = '1';
     
-  };
+  sectionData: Record<string, { tags?: any[]; items?: any[] }> = {};
 
-   
+  constructor(private overlayDataService: OverlayDataService) {}
+
+  ngOnInit() {
+    this.fetchSectionData();
+  }
+
+  //Fetch method to get data for the parent component. 
+  fetchSectionData() {
+    this.overlayDataService.getSectionData().subscribe(data => {
+      this.sectionData = data;
+    });
+  }
+  //Method to open the overlay on button click
   openOverlay() {
     this.showOverlay = true;
   }
 
+ //Method to close the overlay on button click
   closeOverlay = () => {
     this.showOverlay = false;
   };
-
 }

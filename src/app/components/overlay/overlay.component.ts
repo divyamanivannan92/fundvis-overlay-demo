@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output, OnInit, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SectionComponent } from '../section/section.component';
 import { OVERLAY_SECTIONS } from '../../config/fundvis-section.config';
+import { OverlayDataService } from '../../services/fundvis-overlay-service';
 
 @Component({
   selector: 'app-overlay',
@@ -11,6 +12,9 @@ import { OVERLAY_SECTIONS } from '../../config/fundvis-section.config';
   styleUrls: ['./overlay.component.css']
 })
 export class OverlayComponent implements OnInit {
+  
+  constructor(private overlayDataService: OverlayDataService) {}
+  
   @Output() close = new EventEmitter<void>();
   @Input() companyName: string = '';
   @Input() recordId: number | string = '';
@@ -36,6 +40,8 @@ export class OverlayComponent implements OnInit {
     items: section.lazy ? undefined : []
   }));
 
+  
+
   ngOnInit() {
     this.sections = this.sections.map(section => ({
       ...section,
@@ -51,7 +57,12 @@ export class OverlayComponent implements OnInit {
     if (!section) return;
 
     if (section.lazy && !section.items) {
-      section.items = this.sectionData[title]?.items || [];
+       this.overlayDataService.getSectionByTitle(title).subscribe(
+  (data: { items?: any[]; tags?: { label: string; count: number }[] }) => {
+    section.items = data.items || [];
+    section.tags = data.tags || [];
+  }
+);
     }
 
     this.expandedSection = this.expandedSection === title ? null : title;

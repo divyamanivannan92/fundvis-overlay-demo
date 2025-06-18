@@ -8,7 +8,7 @@ export const OVERLAY_SECTIONS = [
   {
     title: 'Tasks',
     icon: 'fa fa-tasks',
-    lazy: true,
+    lazy: false,
     tagColors: {
       open: '#60A5FA',
       recurring: '#F59E0B',
@@ -58,7 +58,7 @@ export const OVERLAY_SECTIONS = [
   {
     title: 'Assets',
     icon: 'fa fa-list-alt',
-    lazy: true,
+    
      tagColors: {
       open: '#60A5FA',
       recurring: '#F59E0B',
@@ -82,6 +82,7 @@ export const OVERLAY_SECTIONS = [
   {
     title: 'Incidents',
     icon: 'fa fa-exclamation-triangle',
+
      tagColors: {
       open: '#60A5FA',
       recurring: '#F59E0B',
@@ -128,6 +129,7 @@ export const OVERLAY_SECTIONS = [
   {
     title: 'Contracts',
     icon: 'far fa-file',
+  
      tagColors: {
       open: '#60A5FA',
       recurring: '#F59E0B',
@@ -153,6 +155,7 @@ export const OVERLAY_SECTIONS = [
     }
     ]
   }
+  
 ];
 
 
