@@ -1,0 +1,42 @@
+<div class="mb-4 border rounded overflow-hidden">
+  <!-- Header -->
+  <div (click)="toggle.emit()" class="cursor-pointer px-4 py-2 bg-gray-100 flex justify-between items-center">
+    <div class="flex items-center space-x-2">
+     <i *ngIf="icon" [class]="icon + ' w-5 h-5 text-gray-600'"></i>
+      <span class="font-medium">{{ title }}</span>
+
+      <!-- Item count -->
+      <span class="text-white text-xs px-2 py-0.5 rounded-full" style="background-color: #F5995B;">
+        {{ items.length }}
+      </span>
+
+      <!-- Tags -->
+      <ng-container *ngIf="tags.length > 0">
+        <span *ngFor="let tag of tags" class="text-gray-700 text-xs px-2 py-0.5 rounded ml-1" 
+        style="background-color: #FFD96B;">
+          {{ tag.count }} {{ tag.label }}
+        </span>
+      </ng-container>
+    </div>
+
+    <div class="flex items-center space-x-2">
+      <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+      <i [class]="expanded ? 'fas fa-chevron-down' : 'fas fa-chevron-right'" class="text-gray-500 transition-transform duration-200"></i>
+    </div>
+    
+
+    <!-- Chevron Icon -->
+    
+  </div>
+
+  <!-- Expandable Content -->
+  <div *ngIf="expanded" class="py-2 px-4">
+    <ng-container *ngIf="items.length > 0; else noItems">
+      <app-list-item [items]="items" [columns]="columns" />
+    </ng-container>
+
+    <ng-template #noItems>
+      <div class="text-sm text-gray-400 text-center py-4">No items available</div>
+    </ng-template>
+  </div>
+</div>

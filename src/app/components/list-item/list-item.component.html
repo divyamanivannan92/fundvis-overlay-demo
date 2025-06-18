@@ -1,0 +1,69 @@
+<div class="border rounded-md">
+  <!-- Table Header -->
+  <div
+    class="grid bg-gray-100 text-sm font-semibold px-4 py-2 border-b"
+    [style.gridTemplateColumns]="'repeat(' + columns.length + ', minmax(0, 1fr))'"
+  >
+    <div *ngFor="let col of columns">{{ col.label }}</div>
+  </div>
+
+  <!-- Table Rows -->
+  <ng-container *ngIf="items.length > 0; else noItems">
+    <div
+      *ngFor="let item of items"
+      class="grid items-center px-4 py-2 text-sm border-b last:border-b-0"
+      [style.gridTemplateColumns]="'repeat(' + columns.length + ', minmax(0, 1fr))'"
+    >
+      <ng-container *ngFor="let col of columns">
+        <ng-container [ngSwitch]="col.type || 'text'">
+
+          <!-- Text -->
+          <div *ngSwitchCase="'text'">{{ item[col.key] }}</div>
+
+          <!-- Status Tag -->
+          <div *ngSwitchCase="'tag'">
+            <span
+              class="text-xs px-2 py-0.5 rounded-full"
+              [ngStyle]="{
+                'background-color': col.tagColors?.[item[col.key]] || '#E5E7EB',
+                'color': col.tagColors?.[item[col.key]] ? '#ffffff' : '#6B7280'
+              }"
+            >
+              {{ item[col.key] }}
+            </span>
+          </div>
+
+          <!-- Action Button -->
+          <div *ngSwitchCase="'button'">
+            <button
+              class="text-xs font-medium px-3 py-1 rounded"
+              [ngStyle]="{
+                'background-color': '#E7EFFF',
+                'color': '#90A8F1'
+              }"
+            >
+              {{ col.buttonText || 'Action' }}
+            </button>
+          </div>
+
+          <div *ngSwitchCase="'link'">
+  <a
+    [href]="'/path/to/' + item[col.key]"
+    target="_blank"
+    class="text-xs font-medium underline text-blue-600 hover:text-blue-800">
+    {{ col.buttonText || item[col.key] }}
+  </a>
+</div>
+
+        </ng-container>
+      </ng-container>
+    </div>
+  </ng-container>
+
+  <!-- No Data Message -->
+  <ng-template #noItems>
+    <div class="text-center text-sm text-gray-400 p-4">
+      No records available
+    </div>
+  </ng-template>
+</div>
