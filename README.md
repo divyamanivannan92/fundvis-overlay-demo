@@ -9,6 +9,7 @@ Project Demo can be found at https://fundvis-overlay-demo.vercel.app/
  - **Data Flow** : Takes input from paraent; Fetch data from service
  - **Config Driven**: A centralized config to manage and cutomize Section level UI elements(Merging Config and dynamic data from service)
  - **Service Layer**: Service Layer Implementation to populate dynamic data. (As of now Mock stubs are placed in asset)
+ - **Error Handling**: Implementation of error handling mechanism to capture all API(service) and UI related errors. We can further enhance the mechanism quickly to diplay it on the screen(using toasters) or create logger to track unknown or non reproducable errors that are generally reported in production
 
   This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
 
