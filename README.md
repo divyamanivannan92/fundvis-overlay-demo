@@ -1,21 +1,21 @@
 # Fundvis Overlay Drawer
-Fundvis Reusable Overlay Drawer - A modular and configurable right slide-in overlay component for displaying dynamic sectioned data with
-support for data loading for each section. User can access further drill down of individual data without disrupting the core workflows.
+A modular and configurable right slide-in overlay component designed for presenting dynamic and sectioned data. 
+It supports dynamic data loading for each section and allows users to drill down through overlay sections without interrupting core workflows.
 
-Project Demo can be found at https://fundvis-overlay-demo.vercel.app/
+This application is deployed online and can be accessed through the URL: https://fundvis-overlay-demo.vercel.app/
 
 # Architecture Highlights
  - **Component Flow**: App Component -> Overlay Component -> section component -> list component
- - **Data Flow** : Takes input from paraent; Fetch data from service
- - **Config Driven**: A centralized config to manage and cutomize Section level UI elements(Merging Config and dynamic data from service)
- - **Service Layer**: Service Layer Implementation to populate dynamic data. (As of now Mock stubs are placed in asset)
- - **Error Handling**: Implementation of error handling mechanism to capture all API(service) and UI related errors. We can further enhance the mechanism quickly to diplay it on the screen(using toasters) or create logger to track unknown or non reproducable errors that are generally reported in production
+ - **Data Flow** : Takes input from parent; Fetch data from service
+ - **Config Driven**: A centralized config to manage and customize section level UI elements(Merging Config and dynamic data from service)
+ - **Service Layer**: Service Layer implementation to populate dynamic data. (As of now Mock stubs are placed in assets)
+ - **Error Handling**: Implementation of error handling mechanism to capture all API(service) and UI related errors.This mechanism acts as a foundation and  can be further enhanced with a quick turn around time to display error on the screen(using toasters) and to create loggers to track down the unknown or hard-to-reproduce errors for better traceability in production environments.
 
   This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
 
 ## Getting Started (Local Setup)
 
-Follow the steps below to set up and run the project on your local machine.
+Please follow the below steps to set up and run the project on your local machine.
 
 ### 1.Prerequisites
 
@@ -30,17 +30,17 @@ Ensure the following software is installed:
 npm install -g @angular/cli
 ```
 
-- **To Check Node and CLI are installed** - Use the below commands. It will be display node and angular with its version else you will get error
+- **To Check Node and CLI are installed** - Use the below commands. It will be display node and angular with its version else an error would be displayed on the screen.
 
 ```bash
 node -v
 ng v
 ```
 
-- **NG not found issue** - If you encounter this issue, you have to define your environment variables
+- **NG not found issue** - If this error is encountered,  Define environment variables in the local system.
 - Open control panel -> click on system variables -> environment variables -> "path" from User variables ->Edit  
-- **Angular Path** - "C:\Users\Divya\AppData\Roaming\npm"(example, change it according to your profile)
-- **ng Path** - "C:\Users\Divya\AppData\Roaming\npm\node_modules\@angular\cli\bin"(example, change it according to your profile)
+- **Angular Path** - "C:\Users\Divya\AppData\Roaming\npm"(This is an example , replace the paths accordingly)
+- **ng Path** - "C:\Users\Divya\AppData\Roaming\npm\node_modules\@angular\cli\bin"(This is an example , replace the paths accordingly)
 
 ### 2.Clone the Repository 
 
@@ -58,7 +58,7 @@ cd fundvis-overlay-demo
 npm install
 ```
 
-**Doing npm install should install all the dependencies like tailwind and fontawesome. If there are any issues, below are the commands to install it 
+**Doing npm install should install all the dependencies like tailwind and fontawesome. If there are any issues, please use the below commands to install the same.
 
 **Tailwind** - Installing tailwind
 ```bash
