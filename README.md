@@ -1,6 +1,16 @@
-# FundvisOverlayDemo
+# Fundvis Overlay Drawer
+Fundvis Reusable Overlay Drawer - A modular and configurable right slide-in overlay component for displaying dynamic sectioned data with
+support for data loading for each section. User can access further drill down of individual data without disrupting the core workflows.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+Project Demo can be found at https://fundvis-overlay-demo.vercel.app/
+
+# Architecture Highlights
+ - **Component Flow**: App Component -> Overlay Component -> section component -> list component
+ - **Data Flow** : Takes input from paraent; Fetch data from service
+ - **Config Driven**: A centralized config to manage and cutomize Section level UI elements(Merging Config and dynamic data from service)
+ - **Service Layer**: Service Layer Implementation to populate dynamic data. (As of now Mock stubs are placed in asset)
+
+  This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
 
 ## Getting Started (Local Setup)
 
