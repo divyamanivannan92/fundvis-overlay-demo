@@ -6,8 +6,7 @@ import { OverlayDataService } from './services/fundvis-overlay-service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, OverlayComponent],
-  providers: [OverlayDataService],
+  imports: [CommonModule, OverlayComponent], 
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
