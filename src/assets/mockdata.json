@@ -42,8 +42,8 @@
       { "label": "Resolved", "count": 1 }
     ],
     "items": [
-      { "name": "Contract A", "status": "Open", "filename": "contract-a.pdf" },
-      { "name": "Contract B", "status": "Resolved", "filename": "contract-b.pdf" }
+      { "name": "Contract A", "status": "Open", "filename": "Contract_A.pdf" },
+      { "name": "Contract B", "status": "Resolved", "filename": "Contract_B.pdf" }
     ]
   }
 }

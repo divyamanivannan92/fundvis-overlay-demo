@@ -48,7 +48,7 @@
 
           <div *ngSwitchCase="'link'">
   <a
-    [href]="'/path/to/' + item[col.key]"
+    [href]="'assets/' + item[col.key]"
     target="_blank"
     class="text-xs font-medium underline text-blue-600 hover:text-blue-800">
     {{ col.buttonText || item[col.key] }}

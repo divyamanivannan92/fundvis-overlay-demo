@@ -19,11 +19,4 @@ export class OverlayDataService {
     return this.http.get<any>('assets/mockdata.json').pipe();  
   }
 
-  // Service call to lazy load few subcomponents items, which are not passed from parent. For heavier data. 
-getSectionByTitle(title: string): Observable<{ items?: any[]; tags?: { label: string; count: number }[] }> {
-  return this.http.get<any>('assets/mockdata.json').pipe(
-    map(data => data[title])
-  );
-}
-
 }

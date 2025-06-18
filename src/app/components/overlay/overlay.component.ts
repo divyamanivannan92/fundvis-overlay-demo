@@ -56,16 +56,6 @@ export class OverlayComponent implements OnInit {
     const section = this.sections.find(s => s.title === title);
     if (!section) return;
 
-    /**To lazy load specific section items. The data will be fetched only if the section is opened */
-    if (section.lazy && !section.items) {
-       this.overlayDataService.getSectionByTitle(title).subscribe(
-  (data: { items?: any[]; tags?: { label: string; count: number }[] }) => {
-    section.items = data.items || [];
-    section.tags = data.tags || [];
-  }
-);
-    }
-
     this.expandedSection = this.expandedSection === title ? null : title;
   }
 
