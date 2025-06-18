@@ -2,15 +2,72 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
 
-## Development server
+## Getting Started (Local Setup)
 
-To start a local development server, run:
+Follow the steps below to set up and run the project on your local machine.
+
+### 1.Prerequisites
+
+Ensure the following software is installed:
+
+- **Node.js** (v18 or above recommended) – [Download Node.js](https://nodejs.org/)
+- **npm** (comes with Node.js)
+- **Angular CLI** – install globally if not already:
+
+
+```bash
+npm install -g @angular/cli
+```
+
+- **To Check Node and CLI are installed** - Use the below commands. It will be display node and angular with its version else you will get error
+
+```bash
+node -v
+ng v
+```
+
+- **NG not found issue** - If you encounter this issue, you have to define your environment variables
+- Open control panel -> click on system variables -> environment variables -> "path" from User variables ->Edit  
+- **Angular Path** - "C:\Users\Divya\AppData\Roaming\npm"(example, change it according to your profile)
+- **ng Path** - "C:\Users\Divya\AppData\Roaming\npm\node_modules\@angular\cli\bin"(example, change it according to your profile)
+
+### 2.Clone the Repository 
+
+- Navigate to your project work space directory in terminal or Right click and open terminal in your project repository
+- Executing the below command will clone the git repository to your local workspace
+
+```bash
+git clone https://github.com/divyamanivannan92/fundvis-overlay-demo.git
+cd fundvis-overlay-demo
+```
+
+## 3. Install dependencies and project related libraries
+
+```bash
+npm install
+```
+
+**Doing npm install should install all the dependencies like tailwind and fontawesome. If there are any issues, below are the commands to install it 
+
+**Tailwind** - Installing tailwind
+```bash
+npm install -D tailwindcss@3.4 postcss autoprefixer
+```
+
+**font awesome icons** - Installing fontawesome for icons
+```bash
+npm install @fortawesome/fontawesome-free
+```
+
+## 4. To start the local development server, run the below command
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. 
+
+The application will automatically reload whenever you modify any of the files.
 
 ## Code scaffolding
 
