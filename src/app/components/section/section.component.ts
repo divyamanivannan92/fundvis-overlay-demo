@@ -15,6 +15,7 @@ export class SectionComponent {
   @Input() items: any[] = [];
   @Input() columns: any[] = [];
   @Input() expanded: boolean = false;
+  @Input() tagColors: Record<string, string> = {};
   
 
   @Output() toggle = new EventEmitter<void>();

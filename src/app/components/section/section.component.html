@@ -11,12 +11,16 @@
       </span>
 
       <!-- Tags -->
-      <ng-container *ngIf="tags.length > 0">
-        <span *ngFor="let tag of tags" class="text-gray-700 text-xs px-2 py-0.5 rounded ml-1" 
-        style="background-color: #FFD96B;">
-          {{ tag.count }} {{ tag.label }}
-        </span>
-      </ng-container>
+      <ng-container *ngIf="tags && tags.length">
+  <span *ngFor="let tag of tags"
+        class="text-gray-700 text-xs px-2 py-0.5 rounded ml-1"
+        [ngStyle]="{
+          'background-color': tagColors[tag.label] || '#FFD96B',
+          'color': tagColors[tag.label] ? '#fff' : '#000'
+        }">
+    {{ tag.count }} {{ tag.label }}
+  </span>
+</ng-container>
     </div>
 
     <div class="flex items-center space-x-2">

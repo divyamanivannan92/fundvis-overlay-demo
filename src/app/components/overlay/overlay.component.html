@@ -25,6 +25,7 @@
         [tags]="section.tags || []"
         [items]="section.items || []"
         [columns]="section.columns"
+        [tagColors]="section.tagColors || {}"
         [expanded]="expandedSection === section.title"
         (toggle)="toggleSection(section.title)">
       </app-section>

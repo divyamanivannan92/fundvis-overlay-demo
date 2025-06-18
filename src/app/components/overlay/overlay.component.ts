@@ -27,6 +27,7 @@ export class OverlayComponent implements OnInit {
     icon: string;
     lazy?: boolean;
     columns: any[];
+    tagColors?: { [key: string]: string };
     tags: { label: string; count: number }[];
     items?: any[];
   }[] = OVERLAY_SECTIONS.map(section => ({

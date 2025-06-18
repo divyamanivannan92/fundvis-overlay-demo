@@ -34,21 +34,21 @@ sectionData = {
       items: []
     },
     Incidents: {
-      tags: [{ label: 'critical', count: 2 }],
+      tags: [{ label: 'critical', count: 1 }],
       items: [
         { name: 'Incidents A', status: 'High Priority' },
         { name: 'Incidents B', status: 'Resolved' }
       ]
     },
-     BusinessFunctions: {
-      tags: [{ label: 'critical', count: 2 }],
+     'Business Functions': {
+      tags: [],
       items: [
-        { name: 'Business Functions A', status: 'Open' },
-        { name: 'Business Functions B', status: 'Resolved' }
+        { name: 'BusinessfnsA', status: 'Open' },
+        { name: 'BusinessfnsB', status: 'Resolved' }
       ]
     },
      Contracts: {
-      tags: [{ label: 'critical', count: 2 }],
+      tags: [{ label: 'open', count: 1 },{ label: 'Resolved', count: 1 }],
       items: [
      { name: 'Contract A', status: 'Open', filename: 'contract-a.pdf' },
   { name: 'Contract B', status: 'Resolved', filename: 'contract-b.pdf' }

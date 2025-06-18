@@ -1,9 +1,14 @@
 <div class="h-screen flex justify-center items-center">
   <button (click)="drawerOpen = true"
-          class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
-    Open Overlay
+          class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700" [ngStyle]="{
+                'background-color': '#E7EFFF',
+                'color': '#90A8F1'
+              }"
+            >
+    {{'Open Overlay'}}
   </button>
 </div>
+
 
 
 <!-- <app-overlay *ngIf="showOverlay" [companyName]="company.name"

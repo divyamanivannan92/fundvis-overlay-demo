@@ -9,6 +9,13 @@ export const OVERLAY_SECTIONS = [
     title: 'Tasks',
     icon: 'fa fa-tasks',
     lazy: true,
+    tagColors: {
+      open: '#60A5FA',
+      recurring: '#F59E0B',
+      critical:'#F87171',
+      Resolved:'#34D399'
+    },
+    
     columns: [
       { key: 'name', label: 'Task Name' },
       { key: 'dueDate', label: 'Due Date' },
@@ -27,6 +34,12 @@ export const OVERLAY_SECTIONS = [
   {
     title: 'Risks',
     icon: 'fa fa-exclamation-circle',
+     tagColors: {
+      open: '#60A5FA',
+      recurring: '#F59E0B',
+      critical:'#F87171',
+      Resolved:'#34D399'
+    },
     columns: [
       { key: 'name', label: 'Risk Name' },
       {
@@ -46,6 +59,12 @@ export const OVERLAY_SECTIONS = [
     title: 'Assets',
     icon: 'fa fa-list-alt',
     lazy: true,
+     tagColors: {
+      open: '#60A5FA',
+      recurring: '#F59E0B',
+      critical:'#F87171',
+      Resolved:'#34D399'
+    },
     columns: [
       { key: 'name', label: 'Asset' },
       {
@@ -63,6 +82,12 @@ export const OVERLAY_SECTIONS = [
   {
     title: 'Incidents',
     icon: 'fa fa-exclamation-triangle',
+     tagColors: {
+      open: '#60A5FA',
+      recurring: '#F59E0B',
+      critical:'#F87171',
+      Resolved:'#34D399'
+    },
     columns: [
       { key: 'name', label: 'Incident' },
       {
@@ -80,6 +105,12 @@ export const OVERLAY_SECTIONS = [
   {
     title: 'Business Functions',
     icon: 'fa fa-sitemap',
+      tagColors: {
+      open: '#60A5FA',
+      recurring: '#F59E0B',
+      critical:'#F87171',
+      Resolved:'#34D399'
+    },
     columns: [
       { key: 'name', label: 'Function' },
       {
@@ -87,8 +118,8 @@ export const OVERLAY_SECTIONS = [
         label: 'Status',
         type: 'tag',
         tagColors: {
-          Active: '#10B981',
-          Inactive: '#9CA3AF'
+          open: '#10B981',
+          Resolved: '#34D399'
         }
       },
       { key: 'action', label: '', type: 'button', buttonText: 'Preview' }
@@ -97,6 +128,12 @@ export const OVERLAY_SECTIONS = [
   {
     title: 'Contracts',
     icon: 'far fa-file',
+     tagColors: {
+      open: '#60A5FA',
+      recurring: '#F59E0B',
+      critical:'#F87171',
+      Resolved:'#34D399'
+    },
     columns: [
       { key: 'name', label: 'Contract Name', },
       {
