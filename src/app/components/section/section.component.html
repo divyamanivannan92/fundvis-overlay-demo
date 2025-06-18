@@ -1,11 +1,11 @@
 <div class="mb-4 border rounded overflow-hidden">
-  <!-- Header -->
+
   <div (click)="toggle.emit()" class="cursor-pointer px-4 py-2 bg-gray-100 flex justify-between items-center">
     <div class="flex items-center space-x-2">
      <i *ngIf="icon" [class]="icon + ' w-5 h-5 text-gray-600'"></i>
       <span class="font-medium">{{ title }}</span>
 
-      <!-- Item count -->
+    
       <span class="text-white text-xs px-2 py-0.5 rounded-full" style="background-color: #F5995B;">
         {{ items.length }}
       </span>
@@ -22,14 +22,12 @@
   </span>
 </ng-container>
     </div>
-
+   <!-- Chevron Icon -->
     <div class="flex items-center space-x-2">
       <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
       <i [class]="expanded ? 'fas fa-chevron-down' : 'fas fa-chevron-right'" class="text-gray-500 transition-transform duration-200"></i>
     </div>
     
-
-    <!-- Chevron Icon -->
     
   </div>
 

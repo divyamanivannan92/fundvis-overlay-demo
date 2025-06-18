@@ -1,3 +1,7 @@
+/* -Configuration file to define overlay sections. 
+- Customizable to adopt any changes to the section columns, its properties and attributes*/
+
+
 export interface OverlaySection {
   title: string;
   icon: string;

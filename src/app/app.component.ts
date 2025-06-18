@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
     this.fetchSectionData();
   }
 
-  //Fetch method to get data for the parent component. 
+  //Fetch method to get data for the parent component.
   fetchSectionData() {
     this.overlayDataService.getSectionData().subscribe(data => {
       this.sectionData = data;
